@@ -1,0 +1,64 @@
+<div class="header-height-fix"></div>
+<header class="header-nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+          <!-- logo -->
+          <a
+            class="navbar-brand font-weight-bold mb-0"
+            routerLink="/"
+            title="Blog"
+          >
+            Blog
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navHeader"
+            aria-controls="navHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="ti ti-menu-2 d-inline"></i>
+            <i class="ti ti-x d-none"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navHeader">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+              </li>
+              <li class="nav-item @@about">
+                <a class="nav-link" routerLink="/about">About</a>
+              </li>
+
+              <li class="nav-item @@archive">
+                <a class="nav-link" routerLink="/privacy">Privacy</a>
+              </li>
+              <li class="nav-item" *ngIf="auth.isLoggedIn() == true">
+                <a class="nav-link" [routerLink]="['/author', id]"
+                  >My profile</a
+                >
+              </li>
+
+              <li class="nav-item" *ngIf="auth.isLoggedIn() == false">
+                <a class="nav-link" routerLink="/register">Register</a>
+              </li>
+
+              <li class="nav-item" *ngIf="auth.isLoggedIn() == false">
+                <a class="nav-link" routerLink="/login">Login</a>
+              </li>
+
+              <li class="nav-item @@contact" *ngIf="auth.isLoggedIn() == true">
+                <a class="nav-link" (click)="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

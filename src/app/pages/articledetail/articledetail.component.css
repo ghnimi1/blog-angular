@@ -1,0 +1,11 @@
+.comment {
+  background-color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+.comment-date {
+  color: gray;
+  text-align: right;
+  font-size: x-small;
+  font-style: italic;
+}
